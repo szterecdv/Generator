@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="hu">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Jelszó Generátor</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="app" class="neon-wrap">
+    <div class="haze"></div>
+
+    <div class="card" role="region" aria-label="Jelszó generátor">
+      <header>
+        <div class="logo" aria-hidden>
+          <svg width="38" height="38" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 12C3 7 7 3 12 3s9 4 9 9-4 9-9 9S3 17 3 12z" fill="white" fill-opacity="0.08"/><path d="M8.2 15.6C9 16.4 10 17 12 17s3-0.6 3.8-1.4" stroke="white" stroke-opacity="0.6" stroke-width="0.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div>
+          <h1>Jelszó Generátor</h1>
+          <p class="lead"> erős, véletlenszerű 16 karakteres jelszó.</p>
+          <div class="title-underline" aria-hidden></div>
+        </div>
+      </header>
+
+      <div class="pw-box">
+        <div class="pw-display" id="pwDisplay" aria-live="polite">
+          <div class="pw-chars" id="pwChars">— — — — — — — — — — — — — — — —</div>
+          <div style="display:flex; gap:8px; align-items:center; margin-left:12px">
+            <button class="ghost" id="revealBtn">Mutat</button>
+            <div class="btns">
+              <button class="btn" id="genBtn">Generál</button>
+              <button class="ghost" id="copyBtn">Másol</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="controls">
+        <div class="chip">Hossz: <strong>16</strong></div>
+        <div class="chip">Típus: <strong>Csak betűk</strong></div>
+        <div style="margin-left:auto" class="chip" id="timeChip">Utolsó: —</div>
+      </div>
+
+      <div class="strength">
+        <div class="chip">Entrópia: <strong id="entropy">—</strong> bit</div>
+        <div class="meter"><i id="meterBar"></i></div>
+      </div>
+
+      <div class="history" id="history"></div>
+
+      <footer>
+        <div>© Jelszó generátor</div>
+        <div>Design: fekete · lila ✦</div>
+      </footer>
+
+      <div class="floaters">
+        <div class="blob b1"></div>
+        <div class="blob b2"></div>
+      </div>
+    </div>
+
+    <div class="snack" id="snack">Másolva ✓</div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
